@@ -87,7 +87,7 @@
 +    
      /* Now check what fuses are against what they should be */
 -    if (safemodeafter_fuse != safemode_fuse) {
-+    m = avr_locate_mem(p, "lfuse");
++    m = avr_locate_mem(p, "fuse");
 +    if (compare_memory_masked(m, safemodeafter_fuse, safemode_fuse)) {
        fuses_updated = 1;
        avrdude_message(MSG_INFO, "%s: safemode: fuse changed! Was %x, and is now %x\n",
